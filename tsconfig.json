@@ -6,6 +6,7 @@
       "ESNext",
       "dom"
     ],
+    "baseUrl": "./src",
     "jsx": "react",
     "noEmit": true,
     "sourceMap": true,
