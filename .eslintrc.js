@@ -15,6 +15,12 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
+  ignorePatterns: [
+    'node_modules/',
+    'dist/',
+    'webpack',
+    'webpack.config.js',
+  ],
   plugins: [
     'react',
     'jsx-a11y',

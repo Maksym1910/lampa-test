@@ -19,5 +19,5 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true
   },
-  "include": ["src", ".eslintrc.js"]
+  "include": ["src", ".eslintrc.js"],
 }
