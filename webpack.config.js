@@ -14,7 +14,6 @@ module.exports = (env) => ({
     path: path.join(__dirname, 'dist'),
     filename: env.production ? 'js/[chunkhash:6].[name].js' : 'js/[name].js',
     chunkFilename: env.production ? 'js/[chunkhash:6].[name].js' : 'js/[name].js',
-    publicPath: '/',
   },
   module: webpackModule,
   devServer: webpackDevServer,
