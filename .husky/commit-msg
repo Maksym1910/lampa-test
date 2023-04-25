@@ -1,0 +1,5 @@
+#!/bin/sh
+if ! head -1 "$1" | grep -qE "^(build|chore|docs|feat|fix|refactor|revert|style):\s?.{1,50}$"; then
+    echo "Invalid commit message format. It should contains (build|chore|docs|feat|fix|refactor|revert|style): message" >&2
+    exit 1
+fi
