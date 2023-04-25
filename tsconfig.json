@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "umd",
+    "module": "commonjs",
     "lib": [
       "ESNext",
       "dom"
@@ -19,5 +19,5 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true
   },
-  "include": ["src"]
+  "include": ["src", ".eslintrc.js"]
 }
