@@ -20,6 +20,7 @@ module.exports = {
     'dist/',
     'webpack',
     'webpack.config.js',
+    'babel.config.js',
   ],
   plugins: [
     'react',
