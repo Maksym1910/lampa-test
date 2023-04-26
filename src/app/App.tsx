@@ -1,9 +1,15 @@
 import React from 'react';
 
+import { Route, Routes } from 'react-router-dom';
+import { withProviders } from './providers';
+
+import 'app/index.scss';
+
 const App: React.FunctionComponent = () => (
-  <div>
-    <h1>Hello</h1>
-  </div>
+  <Routes>
+    <Route path="/" element={<div>Hello</div>} />
+    <Route path="/cart" element={<div>Cart</div>} />
+  </Routes>
 );
 
-export default App;
+export default withProviders(App);
