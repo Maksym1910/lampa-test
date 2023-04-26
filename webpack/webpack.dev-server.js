@@ -5,4 +5,5 @@ module.exports = ({
   static: path.join(__dirname, 'static'),
   hot: true,
   compress: true,
+  historyApiFallback: true,
 });
