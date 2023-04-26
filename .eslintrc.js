@@ -13,7 +13,6 @@ module.exports = {
     'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
   ignorePatterns: [
     'node_modules/',
@@ -33,6 +32,8 @@ module.exports = {
     node: true,
   },
   rules: {
+    'no-param-reassign': 'off',
+    'import/prefer-default-export': 'off',
     'no-restricted-exports': 'off',
     'react/destructuring-assignment': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
@@ -47,7 +48,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 120,
+        code: 100,
         tabWidth: 2,
       },
     ],
