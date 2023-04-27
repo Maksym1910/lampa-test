@@ -32,6 +32,8 @@ module.exports = {
     node: true,
   },
   rules: {
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'no-param-reassign': 'off',
     'import/prefer-default-export': 'off',
     'no-restricted-exports': 'off',
@@ -50,6 +52,13 @@ module.exports = {
       {
         code: 100,
         tabWidth: 2,
+      },
+    ],
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        labelComponents: ['label'],
+        controlComponents: ['input'],
       },
     ],
   },
