@@ -1,0 +1,19 @@
+.root {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.input {
+  padding: 1em 2em;
+}
+
+.error {
+  font-size: 0.8em;
+  color: red;
+}
+
+.error:before {
+  content: '*';
+}
