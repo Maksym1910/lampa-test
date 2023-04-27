@@ -1,11 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Products = () => (
-  <div>
-    <h1>Products</h1>
-    <Link to="/cart">Cart</Link>
-  </div>
-);
+const Products = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
+
+  return (
+    <div>
+      <h1>Products</h1>
+      <Link to="/cart">Cart</Link>
+      <button
+        type="button"
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
+    </div>
+  );
+};
 
 export default Products;
