@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { Login } from 'features/Login';
+const LoginPage = React.lazy(() => import('pages/LoginPage'));
 
 export const PublicRoutes = () => (
   <Routes>
-    <Route path="/login" element={<Login />} />
+    <Route path="/login" element={<LoginPage />} />
     <Route path="*" element={<Navigate to="/login" replace />} />
   </Routes>
 );
