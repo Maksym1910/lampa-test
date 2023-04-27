@@ -1,6 +1,6 @@
-import { LoginData } from '../types/login-data';
+import { ILoginData } from '../types/loginData';
 
-export const apiLogin = async (data: LoginData) => {
+export const apiLoginRequst = async (data: ILoginData) => {
   const response = await fetch('https://dummyjson.com/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
