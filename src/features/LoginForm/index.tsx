@@ -9,14 +9,13 @@ import { Button } from 'shared/components/Button';
 import { Form } from 'shared/components/Form';
 import { Title } from 'shared/components/Title';
 
-import { apiLoginRequst } from '../../api/apiLoginRequst';
-import { ILoginData } from '../../types/loginData';
+import { apiLoginRequest } from './api/apiLoginRequst';
+import { ILoginData } from './types/loginData';
 
 const schema = yup.object().shape({
   username: yup.string().required(),
   password: yup.string().required(),
 });
-
 export const LoginForm: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const {
@@ -29,7 +28,7 @@ export const LoginForm: React.FunctionComponent = () => {
   });
 
   const handleLogin = useCallback(async (formData: ILoginData) => {
-    const { token } = await apiLoginRequst(formData);
+    const { token } = await apiLoginRequest(formData);
     if (token) {
       localStorage.setItem('token', token);
       navigate('/products');

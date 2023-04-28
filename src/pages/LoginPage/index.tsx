@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LoginForm } from 'features/Login';
+import { LoginForm } from 'features/LoginForm';
 import { Layout } from 'shared/components/Layout';
 
 const LoginPage: React.FunctionComponent = () => (
