@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 #C8C8C8;
+  border-radius: 1rem;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 2em 2em 0.5em 2em;
+
+    .description {
+      font-size: 0.9em;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 0.9em;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1em;
+  }
+}
