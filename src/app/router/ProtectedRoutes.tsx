@@ -1,13 +1,13 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Products from 'features/Products';
-import Cart from 'features/Cart';
+import ProductsPage from 'pages/ProductsPage';
+import CartPage from 'pages/CartPage';
 
-export const ProtectedRoutes = () => (
+export const ProtectedRoutes: React.FunctionComponent = () => (
   <Routes>
-    <Route path="/products" element={<Products />} />
-    <Route path="/cart" element={<Cart />} />
+    <Route path="/products" element={<ProductsPage />} />
+    <Route path="/cart" element={<CartPage />} />
     <Route path="*" element={<Navigate to="/products" replace />} />
   </Routes>
 );
