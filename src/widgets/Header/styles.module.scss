@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  padding: 1em 2em;
+
+  .cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+  }
+}
