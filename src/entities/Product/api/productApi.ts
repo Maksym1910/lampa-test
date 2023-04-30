@@ -6,7 +6,7 @@ import { transformResponse } from '../helpers/transformResponse';
 export const productApi = createApi({
   reducerPath: 'productAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://dummyjson.com',
+    baseUrl: process.env.REACT_APP_API_URL,
   }),
   endpoints: (build) => ({
     fetchAllProducts: build.query<IProductsResponse, number | void>({

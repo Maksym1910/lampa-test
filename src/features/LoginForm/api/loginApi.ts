@@ -4,7 +4,7 @@ import { ILoginData, ILoginResponse } from '../types/loginData';
 export const loginApi = createApi({
   reducerPath: 'loginAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://dummyjson.com',
+    baseUrl: process.env.REACT_APP_API_URL,
   }),
   endpoints: (build) => ({
     login: build.mutation<ILoginResponse, ILoginData>({
