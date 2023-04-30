@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { Header } from 'widgets/Header';
+import { ProductsLayout } from 'widgets/ProductsLayout';
 import { ProductsList } from 'widgets/ProductsList';
-import { CategoriesBar } from 'features/CategoriesFilter';
 
-import styles from './ProductsPage.module.scss';
+import { CategoriesBar } from 'features/CategoriesFilter';
 
 export const ProductsPage = () => (
   <>
     <Header />
-    <main className={styles.root}>
+    <ProductsLayout>
       <CategoriesBar />
       <ProductsList />
-    </main>
+    </ProductsLayout>
   </>
 );
