@@ -22,7 +22,7 @@ export const ProductsList: React.FunctionComponent = () => {
     return allProducts?.products || [];
   }, [allProducts, filteredProducts]);
 
-  if (isLoading || (selectedCategory && products?.length === 0)) {
+  if (isLoading || (selectedCategory && products.length === 0)) {
     return <Loader />;
   }
 
