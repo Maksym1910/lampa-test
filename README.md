@@ -24,7 +24,9 @@ Code organized by such layers as:
 - `features`
 - `entities`
 - `shared`
-  <br />
+
+![image](https://user-images.githubusercontent.com/55399296/235369284-f1ad2aa7-6309-451b-a2f7-b37aeec82605.png)
+![image](https://user-images.githubusercontent.com/55399296/235369308-4fcd7669-cfaf-4233-b39c-e01172ef9e4e.png)
 
 ## Authorization
 As https://dummyjson.com is used as API, you should use credentials provided by it for login
