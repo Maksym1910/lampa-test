@@ -12,7 +12,7 @@ export const CartProductsList = () => {
   const isCartEmpty = cartProducts.length === 0;
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <ul className={styles.list}>
         {isCartEmpty && <div>No products in a cart!</div>}
         {cartProducts.map((product) => (
@@ -24,6 +24,6 @@ export const CartProductsList = () => {
         ))}
       </ul>
       <TotalCartPrice label="Total:" className={styles.totalPrice} />
-    </div>
+    </section>
   );
 };
