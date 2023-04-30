@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 2em 0 2em;
+  gap: 0.5em;
+  border-right: 1px solid #ddd;
+
+
+  .categoryList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style-type: none;
+
+    .category {
+      display: flex;
+      gap: 0.5em;
+
+      .selected {
+        text-decoration: underline;
+      }
+
+      button {
+        font-size: 1.2em;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

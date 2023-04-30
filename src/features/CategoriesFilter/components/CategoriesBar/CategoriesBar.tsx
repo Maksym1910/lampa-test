@@ -1,4 +1,8 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+} from 'react';
 
 import { useFetchAllProductsQuery, useFetchProductsByCategoryQuery } from 'entities/Product';
 import { useAppDispatch, useAppSelector } from 'shared/helpers/hooks/redux';
@@ -9,9 +13,9 @@ import {
   removeProductsFromFilterList,
 } from '../../store/categoriesSlice';
 
-import styles from './CategoriesSidebar.module.scss';
+import styles from './CategoriesBar.module.scss';
 
-export const CategoriesSidebar: React.FunctionComponent = () => {
+export const CategoriesBar: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
   const { data } = useFetchAllProductsQuery();
   const categories = useMemo(
@@ -55,18 +59,32 @@ export const CategoriesSidebar: React.FunctionComponent = () => {
 
   return (
     <aside className={styles.root}>
-      <ul>
-        <li>
-          <button type="button" onClick={handleAllCategorySelected}>All items</button>
+      <ul className={styles.categoryList}>
+        <li className={styles.category}>
+          <button
+            type="button"
+            onClick={handleAllCategorySelected}
+            className={!selectedCategory && styles.selected}
+          >
+            All items
+          </button>
         </li>
         {
-          categories.map((category) => (
-            <li key={category}>
-              <button type="button" data-category={category} onClick={handleCategorySelected}>
-                {category}
-              </button>
-            </li>
-          ))
+          categories.map((category) => {
+            const selected = selectedCategory === category ? styles.selected : '';
+            return (
+              <li key={category} className={styles.category}>
+                <button
+                  type="button"
+                  data-category={category}
+                  onClick={handleCategorySelected}
+                  className={selected}
+                >
+                  {category}
+                </button>
+              </li>
+            );
+          })
         }
       </ul>
     </aside>

@@ -1,2 +1,2 @@
-export { CategoriesSidebar } from './components/CategoriesSidebar/CategoriesSidebar';
+export { CategoriesBar } from './components/CategoriesBar/CategoriesBar';
 export { categoriesSlice } from './store/categoriesSlice';
