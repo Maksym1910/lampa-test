@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
+
 import { IProductsResponse } from '../model/types';
 import { transformResponse } from '../helpers/transformResponse';
 
