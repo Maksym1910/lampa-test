@@ -1,13 +1,14 @@
 {
   "name": "lampa-test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsx",
   "repository": "git@github.com:Maksym1910/lampa-test.git",
   "author": "Maksym Rozhytskyi <maksym.rozhytskyi@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --progress --open --env development",
     "build": "webpack --progress --env production",
+    "deploy": "yarn run build && cd dist && copy index.html 200.html && surge",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install"
   },
