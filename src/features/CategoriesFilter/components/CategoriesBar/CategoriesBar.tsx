@@ -65,22 +65,22 @@ export const CategoriesBar: React.FunctionComponent = () => {
         </button>
       </li>
       {
-          categories.map((category) => {
-            const selected = selectedCategory === category ? styles.selected : '';
-            return (
-              <li key={category} className={styles.category}>
-                <button
-                  type="button"
-                  data-category={category}
-                  onClick={handleCategorySelected}
-                  className={selected}
-                >
-                  {category}
-                </button>
-              </li>
-            );
-          })
-        }
+        categories.map((category) => {
+          const selected = selectedCategory === category ? styles.selected : '';
+          return (
+            <li key={category} className={styles.category}>
+              <button
+                type="button"
+                data-category={category}
+                onClick={handleCategorySelected}
+                className={selected}
+              >
+                {category}
+              </button>
+            </li>
+          );
+        })
+      }
     </ul>
   );
 };
