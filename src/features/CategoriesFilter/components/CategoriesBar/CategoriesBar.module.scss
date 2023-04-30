@@ -2,36 +2,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
   padding: 2em 2em 0 2em;
-  gap: 0.5em;
+  list-style-type: none;
   border-right: 1px solid #ddd;
 
-
-  .categoryList {
+  .category {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
-    list-style-type: none;
+    gap: 0.5em;
+  }
 
-    .category {
-      display: flex;
-      gap: 0.5em;
+  .selected {
+    text-decoration: underline;
+  }
 
-      .selected {
-        text-decoration: underline;
-      }
+  button {
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 
-      button {
-        font-size: 1.2em;
-        border: none;
-        cursor: pointer;
-        background-color: transparent;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

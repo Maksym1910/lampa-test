@@ -58,18 +58,17 @@ export const CategoriesBar: React.FunctionComponent = () => {
   }
 
   return (
-    <aside className={styles.root}>
-      <ul className={styles.categoryList}>
-        <li className={styles.category}>
-          <button
-            type="button"
-            onClick={handleAllCategorySelected}
-            className={selectedCategory === '' ? styles.selected : ''}
-          >
-            All items
-          </button>
-        </li>
-        {
+    <ul className={styles.root}>
+      <li className={styles.category}>
+        <button
+          type="button"
+          onClick={handleAllCategorySelected}
+          className={selectedCategory === '' ? styles.selected : ''}
+        >
+          All items
+        </button>
+      </li>
+      {
           categories.map((category) => {
             const selected = selectedCategory === category ? styles.selected : '';
             return (
@@ -86,7 +85,6 @@ export const CategoriesBar: React.FunctionComponent = () => {
             );
           })
         }
-      </ul>
-    </aside>
+    </ul>
   );
 };
