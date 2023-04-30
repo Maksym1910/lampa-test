@@ -1,6 +1,7 @@
+import { combineReducers } from '@reduxjs/toolkit';
+
 import { productApi } from 'entities/Product/api/productApi';
 import { cartSlice } from 'features/Cart/store/cartSlice';
-import { combineReducers } from '@reduxjs/toolkit';
 import { categoriesSlice } from 'features/CategoriesFilter';
 import { loginApi } from 'features/LoginForm/api/loginApi';
 
