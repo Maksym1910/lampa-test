@@ -1,8 +1,11 @@
 .root {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 #C8C8C8;
+  border-radius: 1rem;
+  padding: 2em;
 }
