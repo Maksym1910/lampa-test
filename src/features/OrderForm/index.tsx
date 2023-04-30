@@ -33,6 +33,7 @@ export const OrderForm: React.FunctionComponent = () => {
     resolver: yupResolver(schema),
   });
   const { totalPrice } = useAppSelector((state) => state.cart);
+  const isCartEmpty = useAppSelector((state) => state.cart.cartProducts.length) === 0;
 
   const handleOrderSumbit = useCallback(async (orderData: IOrderData) => {
     const message = `
@@ -78,7 +79,7 @@ export const OrderForm: React.FunctionComponent = () => {
         errors={errors}
         placeholder="Phone"
       />
-      <Button type="submit">Order</Button>
+      <Button type="submit" disabled={isCartEmpty}>Order</Button>
     </Form>
   );
 };
