@@ -1,0 +1,19 @@
+.category {
+  display: flex;
+  gap: 0.5em;
+
+  button {
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.selected {
+  text-decoration: underline;
+}
