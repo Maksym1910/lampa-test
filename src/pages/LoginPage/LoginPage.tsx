@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { LoginForm } from 'features/LoginForm';
-import { Layout } from 'shared/components/Layout';
+import { LoginLayout } from 'widgets/LoginLayout/LoginLayout';
 
 export const LoginPage: React.FunctionComponent = () => (
-  <Layout>
+  <LoginLayout>
     <LoginForm />
-  </Layout>
+  </LoginLayout>
 );
