@@ -64,7 +64,7 @@ export const CategoriesBar: React.FunctionComponent = () => {
           <button
             type="button"
             onClick={handleAllCategorySelected}
-            className={!selectedCategory && styles.selected}
+            className={selectedCategory === '' ? styles.selected : ''}
           >
             All items
           </button>

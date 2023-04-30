@@ -1,6 +1,5 @@
 .root {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
+  display: flex;
   justify-content: center;
   gap: 3em;
   padding: 3em 1em;
