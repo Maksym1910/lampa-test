@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+
+  button {
+    padding: 0.5em 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
