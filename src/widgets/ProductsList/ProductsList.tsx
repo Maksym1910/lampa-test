@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { useAppSelector } from 'shared/helpers/hooks/redux';
 import { Loader } from 'shared/components/Loader';
@@ -15,8 +15,14 @@ export const ProductsList: React.FunctionComponent = () => {
   const { data: allProducts, isLoading, isError } = useFetchAllProductsQuery();
   const { filteredProducts } = useAppSelector((state) => state.categories);
   const { selectedCategory } = useAppSelector((state) => state.categories);
+  const products = useMemo(() => {
+    if (filteredProducts.length > 0) {
+      return filteredProducts;
+    }
+    return allProducts?.products || [];
+  }, [allProducts, filteredProducts]);
 
-  if (isLoading || (selectedCategory && filteredProducts.length === 0)) {
+  if (isLoading || (selectedCategory && products?.length === 0)) {
     return <Loader />;
   }
 
@@ -26,23 +32,15 @@ export const ProductsList: React.FunctionComponent = () => {
 
   return (
     <ul className={styles.root}>
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product) => (
+      {
+        products.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
             actions={<AddToCart product={product} />}
           />
         ))
-      ) : (
-        allProducts?.products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            actions={<AddToCart product={product} />}
-          />
-        ))
-      )}
+       }
     </ul>
   );
 };
