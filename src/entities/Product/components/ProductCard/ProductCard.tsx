@@ -3,7 +3,7 @@ import React from 'react';
 import { Title } from 'shared/components/Title';
 
 import { IProduct } from '../../model/types';
-import { priceFormatter } from '../../helpers/priceFormatter';
+import { formatPrice } from '../../helpers/formatPrice';
 
 import styles from './ProductCard.module.scss';
 
@@ -13,7 +13,7 @@ interface IProductCardProps {
 }
 export const ProductCard: React.FunctionComponent<IProductCardProps> = (props) => {
   const { product, actions } = props;
-  const formattedPrice = priceFormatter(product.price);
+  const formattedPrice = formatPrice(product.price);
 
   return (
     <li className={styles.root}>
