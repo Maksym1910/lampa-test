@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { useAppSelector } from 'shared/helpers/hooks/redux';
+import { Loader } from 'shared/components/Loader';
+
 import { AddToCart } from 'features/Cart';
 import {
   ProductCard,
@@ -15,7 +17,7 @@ export const ProductsList: React.FunctionComponent = () => {
   const { selectedCategory } = useAppSelector((state) => state.categories);
 
   if (isLoading || (selectedCategory && filteredProducts.length === 0)) {
-    return <h2>Loading...</h2>;
+    return <Loader />;
   }
 
   if (isError) {
