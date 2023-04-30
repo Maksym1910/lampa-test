@@ -4,4 +4,14 @@
   justify-content: center;
   gap: 3em;
   padding: 3em 1em;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .totalPrice {
+    text-align: center;
+  }
 }

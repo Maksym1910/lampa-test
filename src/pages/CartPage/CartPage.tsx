@@ -2,18 +2,16 @@ import React from 'react';
 
 import { Header } from 'widgets/Header';
 import { CartProductsList } from 'widgets/CartProductsList';
+import { CartLayout } from 'widgets/CartLayout';
 
 import { OrderForm } from 'features/OrderForm';
-
-import styles from './CartPage.module.scss';
 
 export const CartPage = () => (
   <>
     <Header />
-    <div className={styles.root}>
+    <CartLayout>
       <CartProductsList />
       <OrderForm />
-    </div>
+    </CartLayout>
   </>
-
 );

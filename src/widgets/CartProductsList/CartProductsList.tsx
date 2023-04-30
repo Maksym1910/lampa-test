@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ProductCard } from 'entities/Product';
-import { ChangeProductQuantity } from 'features/Cart';
+import { ChangeProductQuantity, TotalCartPrice } from 'features/Cart';
 
 import { useAppSelector } from 'shared/helpers/hooks/redux';
 
@@ -12,15 +12,18 @@ export const CartProductsList = () => {
   const isCartEmpty = cartProducts.length === 0;
 
   return (
-    <ul className={styles.root}>
-      {isCartEmpty && <div>No products in a cart!</div>}
-      {cartProducts.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          actions={<ChangeProductQuantity product={product} />}
-        />
-      ))}
-    </ul>
+    <div className={styles.root}>
+      <ul className={styles.list}>
+        {isCartEmpty && <div>No products in a cart!</div>}
+        {cartProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            actions={<ChangeProductQuantity product={product} />}
+          />
+        ))}
+      </ul>
+      <TotalCartPrice label="Total:" className={styles.totalPrice} />
+    </div>
   );
 };
