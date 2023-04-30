@@ -21,8 +21,6 @@ export const AddToCart: React.FunctionComponent<IAddToCartProps> = (props) => {
     dispatch(addProductToCart(product));
   }, [dispatch, product]);
 
-  // console.log('render');
-
   return (
     <Button onClick={handleAddToCart} disabled={isAddedToCart}>
       <span>{isAddedToCart ? 'In a Cart' : 'Add to Cart'}</span>
