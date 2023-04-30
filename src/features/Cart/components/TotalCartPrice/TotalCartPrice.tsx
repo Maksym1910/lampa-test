@@ -4,8 +4,14 @@ import { useAppDispatch, useAppSelector } from 'shared/helpers/hooks/redux';
 import { formatPrice } from 'entities/Product';
 import { addTotalPrice } from '../../store/cartSlice';
 
-export const TotalCartPrice: React.FunctionComponent = () => {
+interface ITotalCartPriceProps {
+  label?: string
+  className?: string
+}
+
+export const TotalCartPrice: React.FunctionComponent<ITotalCartPriceProps> = (props) => {
   const dispatch = useAppDispatch();
+  const { label = '', className } = props;
   const { cartProducts } = useAppSelector((state) => state.cart);
   const totalPrice = cartProducts.reduce(
     (value, cartProduct) => value + cartProduct.price * cartProduct.quantity,
@@ -18,8 +24,8 @@ export const TotalCartPrice: React.FunctionComponent = () => {
   }, [dispatch, totalPrice]);
 
   return (
-    <span>
-      {totalPrice === 0 ? '' : formattedPrice}
-    </span>
+    <p className={className}>
+      {totalPrice > 0 && <span>{`${label} ${formattedPrice}`}</span>}
+    </p>
   );
 };
