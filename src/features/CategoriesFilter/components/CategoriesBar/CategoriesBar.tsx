@@ -49,10 +49,6 @@ export const CategoriesBar: React.FunctionComponent = () => {
     [dispatch],
   );
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   if (isError) {
     return <div>Error</div>;
   }
