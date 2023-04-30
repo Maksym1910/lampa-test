@@ -7,24 +7,4 @@
   padding: 2em 2em 0 2em;
   list-style-type: none;
   border-right: 1px solid #ddd;
-
-  .category {
-    display: flex;
-    gap: 0.5em;
-  }
-
-  .selected {
-    text-decoration: underline;
-  }
-
-  button {
-    font-size: 1.2em;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }

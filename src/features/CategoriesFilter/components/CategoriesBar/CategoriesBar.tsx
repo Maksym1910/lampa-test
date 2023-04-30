@@ -14,6 +14,7 @@ import {
 } from '../../store/categoriesSlice';
 
 import styles from './CategoriesBar.module.scss';
+import { CategoryItem } from '../CategoryItem/CategoryItem';
 
 export const CategoriesBar: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
@@ -55,31 +56,20 @@ export const CategoriesBar: React.FunctionComponent = () => {
 
   return (
     <ul className={styles.root}>
-      <li className={styles.category}>
-        <button
-          type="button"
-          onClick={handleAllCategorySelected}
-          className={selectedCategory === '' ? styles.selected : ''}
-        >
-          All items
-        </button>
-      </li>
+      <CategoryItem
+        category="All items"
+        isSelected={selectedCategory === ''}
+        handleCategorySelected={handleAllCategorySelected}
+      />
       {
-        categories.map((category) => {
-          const selected = selectedCategory === category ? styles.selected : '';
-          return (
-            <li key={category} className={styles.category}>
-              <button
-                type="button"
-                data-category={category}
-                onClick={handleCategorySelected}
-                className={selected}
-              >
-                {category}
-              </button>
-            </li>
-          );
-        })
+        categories.map((category) => (
+          <CategoryItem
+            key={category}
+            category={category}
+            isSelected={selectedCategory === category}
+            handleCategorySelected={handleCategorySelected}
+          />
+        ))
       }
     </ul>
   );
