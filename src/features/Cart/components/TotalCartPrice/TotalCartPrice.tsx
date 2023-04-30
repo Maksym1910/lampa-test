@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useAppSelector } from 'shared/helpers/hooks/redux';
-import { priceFormatter } from 'entities/Product';
+import { useAppDispatch, useAppSelector } from 'shared/helpers/hooks/redux';
+import { formatPrice } from 'entities/Product';
+import { addTotalPrice } from '../../store/cartSlice';
 
 export const TotalCartPrice: React.FunctionComponent = () => {
-  const { products: cartProducts } = useAppSelector((state) => state.cart);
-  const totalPrice = cartProducts.reduce((value, cartProduct) => value + cartProduct.price, 0);
-  const formattedPrice = priceFormatter(totalPrice);
+  const dispatch = useAppDispatch();
+  const { cartProducts } = useAppSelector((state) => state.cart);
+  const totalPrice = cartProducts.reduce(
+    (value, cartProduct) => value + cartProduct.price * cartProduct.quantity,
+    0,
+  );
+  const formattedPrice = formatPrice(totalPrice);
+
+  useEffect(() => {
+    dispatch(addTotalPrice(totalPrice));
+  }, [dispatch, totalPrice]);
 
   return (
     <span>
