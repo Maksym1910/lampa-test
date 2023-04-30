@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-top: 3em;
+  padding-left: 1em;
+  background-color: aqua;
+
+  .category {
+    display: flex;
+    gap: 0.5em;
+  }
+}
