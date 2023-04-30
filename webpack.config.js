@@ -1,5 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+require('dotenv').config()
 
 const webpackModule = require('./webpack/webpack.module');
 const webpackDevServer = require('./webpack/webpack.dev-server');
@@ -22,5 +24,8 @@ module.exports = (env) => ({
     new HtmlWebpackPlugin({
       template: path.resolve('src', 'index.html'),
     }),
+    new webpack.DefinePlugin({
+      'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL),
+    })
   ],
 });
