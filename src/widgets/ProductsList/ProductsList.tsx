@@ -14,15 +14,14 @@ import styles from './ProductsList.module.scss';
 export const ProductsList: React.FunctionComponent = () => {
   const { data: allProducts, isLoading, isError } = useFetchAllProductsQuery();
   const { filteredProducts } = useAppSelector((state) => state.categories);
-  const { selectedCategory } = useAppSelector((state) => state.categories);
   const products = useMemo(() => {
     if (filteredProducts.length > 0) {
       return filteredProducts;
     }
     return allProducts?.products || [];
-  }, [allProducts, filteredProducts]);
+  }, [allProducts?.products, filteredProducts]);
 
-  if (isLoading || (selectedCategory && products.length === 0)) {
+  if (isLoading) {
     return <Loader />;
   }
 
