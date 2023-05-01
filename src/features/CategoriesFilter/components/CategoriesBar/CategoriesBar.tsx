@@ -56,11 +56,13 @@ export const CategoriesBar: React.FunctionComponent = () => {
 
   return (
     <ul className={styles.root}>
-      <CategoryItem
-        category="All items"
-        isSelected={selectedCategory === ''}
-        handleCategorySelected={handleAllCategorySelected}
-      />
+      {!isLoading && (
+        <CategoryItem
+          category="All items"
+          isSelected={selectedCategory === ''}
+          handleCategorySelected={handleAllCategorySelected}
+        />
+      )}
       {
         categories.map((category) => (
           <CategoryItem
